@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 const API_KEY = 'XVBJRDCXSCJ5Y4QCW65MXQ9MF';
-const URL_FORMAT = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/[location]?key=${API_KEY}`;
+// const URL_FORMAT = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${API_KEY}`;
 const urlLondon = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London, UK?key=${API_KEY}`;
+// const searchElement = document.querySelector('#searchInput');
 
 
 async function getWeatherData() {
@@ -22,6 +22,29 @@ async function getWeatherData() {
 async function consoleData() {
     const data = await getWeatherData();
     console.log(data);
+    processData(data)
+}
+
+async function processData(data) {
+
+    const address = data.address;
+    const description = data.description;
+    const days = [];
+    data.days.forEach(day => {
+        days.push(
+            {
+                "date": day.datetime,
+                "tempmax": day.tempmax,
+                "tempmin": day.tempmin,
+                "temp": day.temp,
+                "uvindex": day.uvindex,
+                "conditions": day.conditions
+            }
+        );
+    });
+    console.log(address)
+    console.log(description)
+    console.log(days)
 }
 
 consoleData();
