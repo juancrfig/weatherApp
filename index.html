@@ -1,26 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="nord">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="" type="image/x-icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./src/css/output.css" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/output.css" type="text/css" />
     <script src="./src/app.js" type="module"></script>
     <title>Open Weather</title>
-</head>
-<body class="h-screen bg-primary">
+  </head>
+  <body class="h-screen bg-primary">
     <div class="navbar bg-base-300 shadow-sm w-full">
-      <div class="searchBox mx-auto">
+      <h1 class="text-amber-600 text-2xl justify-self-start">Open Weather</h1>
+      <div class="searchBox m-auto">
         <label class="input input-bordered flex items-center gap-2">
-          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+          <svg
+            class="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input type="search" id="searchInput" required placeholder="Search" />
+          <input type="search" id="searchInput" required placeholder="Search for a city" />
         </label>
       </div>
     </div>

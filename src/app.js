@@ -1,8 +1,15 @@
 const API_KEY = 'XVBJRDCXSCJ5Y4QCW65MXQ9MF';
 // const URL_FORMAT = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${API_KEY}`;
 const urlLondon = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London, UK?key=${API_KEY}`;
-// const searchElement = document.querySelector('#searchInput');
+const searchElement = document.querySelector('#searchInput');
 
+
+searchElement.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const userResponse = searchElement.value;
+        console.log(userResponse);
+    }
+} )
 
 async function getWeatherData() {
     try {
@@ -21,7 +28,6 @@ async function getWeatherData() {
 
 async function consoleData() {
     const data = await getWeatherData();
-    console.log(data);
     processData(data)
 }
 
@@ -31,6 +37,9 @@ async function processData(data) {
     const description = data.description;
     const days = [];
     data.days.forEach(day => {
+        if (days.length > 6) {
+            return;
+        }
         days.push(
             {
                 "date": day.datetime,
@@ -48,3 +57,13 @@ async function processData(data) {
 }
 
 consoleData();
+
+
+
+
+async function main(){
+
+
+} 
+
+main();
