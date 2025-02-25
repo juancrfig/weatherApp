@@ -14,31 +14,42 @@
     <title>Open Weather</title>
   </head>
   <body class="h-screen bg-primary">
+    <!-- Navbar -->
     <div class="navbar bg-base-300 shadow-sm w-full">
-      <h1 class="text-amber-600 text-2xl font-bold justify-self-start">Open Weather</h1>
-      <div class="searchBox m-auto">
-        <label class="input input-bordered flex items-center gap-2">
-          <svg
-            class="h-[1em] opacity-50"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <g
-              stroke-linejoin="round"
-              stroke-linecap="round"
-              stroke-width="2.5"
-              fill="none"
-              stroke="currentColor"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input type="search" id="searchInput" required placeholder="Search for a city" />
+      <div class="flex-1">
+        <a href="#" class="text-amber-600 text-2xl font-bold flex items-center">
+          <i class="fas fa-cloud-sun mr-2"></i> <!-- Weather-themed icon -->
+          Open Weather
+        </a>
+      </div>
+      <div class="mr-4">
+        <label class="swap swap-rotate">
+          <input type="checkbox" id="temp-toggle" />
+          <div class="swap-on">°C</div>
+          <div class="swap-off">°F</div>
         </label>
       </div>
+      <div class="flex-none">
+        <div class="searchBox">
+          <label class="input input-bordered flex items-center gap-2">
+            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input type="search" id="searchInput" required placeholder="Search for a city" />
+          </label>
+        </div>
+      </div>
     </div>
+
+    <!-- Main Section -->
     <main class="h-fit bg-primary flex pt-20 flex-col items-center" id="mainEl">
-	</main>
+      <div id="welcomeMessage" class="text-center text-white">
+        <h1 class="text-4xl font-bold mb-4 animate-fadeIn">Welcome to Open Weather</h1>
+        <p class="text-xl animate-fadeInDelay">Search for a city to get started!</p>
+      </div>
+    </main>
   </body>
 </html>
